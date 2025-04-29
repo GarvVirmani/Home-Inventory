@@ -8,6 +8,10 @@ An easy-to-use Home Inventory Management web application, built with the **MERN*
 
 🔗 [Visit HomeInventory](https://home-inventory-9zqa.onrender.com)
 
+
+https://github.com/user-attachments/assets/8a4ee9f1-39fe-4f7d-b6b0-f7c354f940ed
+
+
 ---
 
 ## 📑 Features
