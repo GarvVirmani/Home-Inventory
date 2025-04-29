@@ -20,7 +20,7 @@ function Navbar() {
 
   return (
     <div className={`fixed top-0 left-0 w-full z-50 ${darkMode ? 'bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 shadow-md' : 'bg-gradient-to-b from-blue-100 to-white text-blue-800 shadow-sm'} transition-colors duration-300`}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
           {!isMenuOpen && (
             <h1 className="text-2xl font-extrabold">

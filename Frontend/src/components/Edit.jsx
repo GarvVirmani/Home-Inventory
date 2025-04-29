@@ -27,7 +27,18 @@ function Edit() {
         const formattedDate = item.purchaseDate ? item.purchaseDate.slice(0, 10) : "";
         setFormData({ ...item, purchaseDate: formattedDate });
       } catch (error) {
-        toast.error("Failed to load item.");
+        toast.error("Failed to load item.", {
+          style: {
+            background: darkMode ? '#000000' : '#ffffff',
+            color: darkMode ? '#ffffff' : '#000000',
+            borderRadius: '8px',
+            boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+          },
+          iconTheme: {
+            primary: darkMode ? '#ffffff' : '#000000',
+            secondary: darkMode ? '#000000' : '#ffffff',
+          },
+        });
       }
     };
     fetchItem();
@@ -41,10 +52,32 @@ function Edit() {
     e.preventDefault();
     try {
       await axios.put(`${ITEM_API_END_POINT}/update/${id}`, formData, { withCredentials: true });
-      toast.success("Item updated successfully!");
+      toast.success("Item updated successfully!", {
+        style: {
+          background: darkMode ? '#000000' : '#ffffff',
+          color: darkMode ? '#ffffff' : '#000000',
+          borderRadius: '8px',
+          boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+        },
+        iconTheme: {
+          primary: darkMode ? '#ffffff' : '#000000',
+          secondary: darkMode ? '#000000' : '#ffffff',
+        },
+      });
       navigate("/");
     } catch (error) {
-      toast.error("Failed to update item.");
+      toast.error("Failed to update item.", {
+        style: {
+          background: darkMode ? '#000000' : '#ffffff',
+          color: darkMode ? '#ffffff' : '#000000',
+          borderRadius: '8px',
+          boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+        },
+        iconTheme: {
+          primary: darkMode ? '#ffffff' : '#000000',
+          secondary: darkMode ? '#000000' : '#ffffff',
+        },
+      });
     }
   };
 

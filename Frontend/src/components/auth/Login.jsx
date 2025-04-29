@@ -28,12 +28,34 @@ function Login() {
             if (res.data.success) {
                 dispatch(setUser(res.data.user));
                 navigate("/");
-                toast.success(res.data.message);
+                toast.success(res.data.message, {
+                    style: {
+                      background: darkMode ? '#000000' : '#ffffff',
+                      color: darkMode ? '#ffffff' : '#000000',
+                      borderRadius: '8px',
+                      boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+                    },
+                    iconTheme: {
+                      primary: darkMode ? '#ffffff' : '#000000',
+                      secondary: darkMode ? '#000000' : '#ffffff',
+                    },
+                  });
             }
         }
         catch (error) {
             console.error(error);
-            toast.error(error.response.data.message);
+            toast.error(error.response.data.message, {
+                style: {
+                  background: darkMode ? '#000000' : '#ffffff',
+                  color: darkMode ? '#ffffff' : '#000000',
+                  borderRadius: '8px',
+                  boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+                },
+                iconTheme: {
+                  primary: darkMode ? '#ffffff' : '#000000',
+                  secondary: darkMode ? '#000000' : '#ffffff',
+                },
+              });
         }
         finally {
             dispatch(setLoading(false));

@@ -20,7 +20,18 @@ function AddItem() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isAuthenticated) {
-      toast.error('You must be logged in to add an item.');
+      toast.error('You must be logged in to add an item.', {
+        style: {
+          background: darkMode ? '#000000' : '#ffffff',
+          color: darkMode ? '#ffffff' : '#000000',
+          borderRadius: '8px',
+          boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+        },
+        iconTheme: {
+          primary: darkMode ? '#ffffff' : '#000000',
+          secondary: darkMode ? '#000000' : '#ffffff',
+        },
+      });
       navigate('/login');
       return;
     }
@@ -31,11 +42,33 @@ function AddItem() {
         { withCredentials: true }
       );
       if (res.data.success) {
-        toast.success('Item added successfully!');
+        toast.success('Item added successfully!', {
+          style: {
+            background: darkMode ? '#000000' : '#ffffff',
+            color: darkMode ? '#ffffff' : '#000000',
+            borderRadius: '8px',
+            boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+          },
+          iconTheme: {
+            primary: darkMode ? '#ffffff' : '#000000',
+            secondary: darkMode ? '#000000' : '#ffffff',
+          },
+        });
         navigate('/');
       }
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        style: {
+          background: darkMode ? '#000000' : '#ffffff',
+          color: darkMode ? '#ffffff' : '#000000',
+          borderRadius: '8px',
+          boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
+        },
+        iconTheme: {
+          primary: darkMode ? '#ffffff' : '#000000',
+          secondary: darkMode ? '#000000' : '#ffffff',
+        },
+      });
     }
   };
 
